@@ -20,8 +20,8 @@
     .brand{display:flex;align-items:center;gap:14px;font-size:23px;white-space:nowrap}
     .brand img{width:44px;height:44px;object-fit:cover}
     .nav{display:flex;align-items:center;gap:10px}
-    .nav a,.button{display:inline-flex;align-items:center;justify-content:center;background:var(--white);color:var(--black);padding:9px 15px;font-size:20px;white-space:nowrap;transition:background .2s,color .2s}
-    .nav a:hover,.button:hover{background:#d8d8d8}
+    .nav a,.button{display:inline-flex;align-items:center;justify-content:center;background:var(--white);color:var(--black);border:1px solid var(--white);padding:9px 15px;font-size:20px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+    .nav a:hover,.nav a:focus-visible,.button:hover,.button:focus-visible{background:var(--black);color:var(--white);border-color:var(--white)}
     .hero{position:relative;isolation:isolate;min-height:839px;height:min(839px,100svh);overflow:hidden;background:#161616 url("./media/home_B1_fond.jpg") center/cover no-repeat}
     .hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.48),transparent 55%)}
     .hero-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover}
@@ -34,7 +34,11 @@
     .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
     .project-card{position:relative;display:block;overflow:hidden;aspect-ratio:345/442;background:#242424}
     .project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .project-card:hover img{transform:scale(1.035)}
+    .project-card:after{content:"";position:absolute;inset:0;background:rgba(128,128,128,0);transition:background .25s ease}
+    .project-card__title{position:absolute;z-index:1;left:22px;right:22px;bottom:24px;margin:0;color:#fff;font-size:clamp(24px,2.4vw,36px);line-height:1.05;font-weight:500;opacity:0;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease}
+    .project-card:hover:after,.project-card:focus-visible:after{background:rgba(128,128,128,.48)}
+    .project-card:hover img,.project-card:focus-visible img{transform:scale(1.035)}
+    .project-card:hover .project-card__title,.project-card:focus-visible .project-card__title{opacity:1;transform:translateY(0)}
     .about{display:grid;grid-template-columns:minmax(0,710px) minmax(240px,345px);align-items:center;justify-content:space-between;gap:7vw}
     .about .section-title{text-align:left;margin:0 0 24px}
     .about-copy{font-size:23px;line-height:1.35}
@@ -50,7 +54,7 @@
       .brand{font-size:18px}.brand img{width:34px;height:34px}
       .nav{width:100%;gap:6px;overflow-x:auto;padding-bottom:3px}
       .nav a{font-size:15px;padding:8px 10px}
-      .hero{height: min(760px,100svh);min-height:620px;background-image:url("./media/home_B1_fond-tel.jpg");background-position:center}
+      .hero{height:min(760px,100svh);min-height:620px;background-image:url("./media/home_B1_fond-tel.jpg");background-position:center}
       .hero-video--desktop{display:none}.hero-video--mobile{display:block}
       .hero-copy{left:22px;right:22px;bottom:8%}
       .hero-kicker{font-size:18px;max-width:300px;line-height:1.25;margin-bottom:12px}
@@ -59,6 +63,7 @@
       .section-title{font-size:32px;margin-bottom:34px}
       .project-grid{grid-template-columns:1fr;gap:18px}
       .project-card{aspect-ratio:345/320}
+      .project-card__title{font-size:30px;left:18px;bottom:18px}
       .about{grid-template-columns:1fr;gap:28px}
       .about .section-title{margin-bottom:20px}
       .about-copy{font-size:18px;line-height:1.4}
@@ -67,6 +72,7 @@
       .clients{padding-top:62px!important}
       footer{font-size:16px;padding:22px;min-height:72px}
     }
+    @media(hover:none){.project-card:after{background:rgba(128,128,128,.28)}.project-card__title{opacity:1;transform:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-video{visibility:hidden}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -86,9 +92,9 @@
     <section class="content" id="projets">
       <h2 class="section-title">Les projets récents</h2>
       <div class="project-grid">
-        <a class="project-card" href="#projets" aria-label="Découvrir les projets"><img src="./media/home_B2_projets.jpg" alt="Projets visuels"></a>
-        <a class="project-card" href="#concerts" aria-label="Découvrir les concerts"><img src="./media/home_B2_concerts.jpg.jpg" alt="Photographie de concert"></a>
-        <a class="project-card" href="#galerie" aria-label="Découvrir la galerie"><img src="./media/home_B2_galerie.jpg" alt="Galerie photographique"></a>
+        <a class="project-card" href="#projets" aria-label="Découvrir les projets"><img src="./media/home_B2_projets.jpg" alt="Projets visuels"><h3 class="project-card__title">Projets</h3></a>
+        <a class="project-card" href="#concerts" aria-label="Découvrir les concerts"><img src="./media/home_B2_concerts.jpg.jpg" alt="Photographie de concert"><h3 class="project-card__title">Concerts</h3></a>
+        <a class="project-card" href="#galerie" aria-label="Découvrir la galerie"><img src="./media/home_B2_galerie.jpg" alt="Galerie photographique"><h3 class="project-card__title">Galerie</h3></a>
       </div>
       <div class="section-actions"><a class="button" href="#projets">Voir les projets</a></div>
     </section>
