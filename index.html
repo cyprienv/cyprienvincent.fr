@@ -16,13 +16,14 @@
     body{margin:0;background:var(--black);color:var(--white);font-family:Subjectivity,Arial,sans-serif;font-weight:400}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
-    .site-header--compact{display:none}
+    .site-header.site-header--desktop{display:flex}
+    .site-header.site-header--compact{display:none}
     .site-header{position:absolute;z-index:5;top:0;left:0;width:100%;height:83px;padding:0 max(5.1vw,24px);display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:14px;font-size:23px;white-space:nowrap}
     .brand img{width:44px;height:44px;object-fit:cover}
     .nav{display:flex;align-items:center;gap:10px}
     .nav a,.button{display:inline-flex;align-items:center;justify-content:center;background:var(--white);color:var(--black);border:1px solid var(--white);padding:9px 15px;font-size:20px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
-    .nav a:hover,.nav a:focus-visible,.button:hover,.button:focus-visible{background:var(--black);color:var(--white);border-color:var(--white)}
+    .nav a:hover,.nav a:focus-visible,.button:hover,.button:focus-visible{background:var(--black);color:var(--white);border:1px solid #fff;outline:1px solid #fff;outline-offset:0}
     .hero{position:relative;isolation:isolate;min-height:839px;height:min(839px,100svh);overflow:hidden;background:#161616 url("./media/home_B1_fond.jpg") center/cover no-repeat}
     .hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.48),transparent 55%)}
     .hero-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover}
@@ -35,10 +36,9 @@
     .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
     .project-card{position:relative;display:block;overflow:hidden;aspect-ratio:345/442;background:#242424}
     .project-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .project-card:after{content:"";position:absolute;inset:0;background:rgba(128,128,128,0);transition:background .25s ease}
+    .project-card:after{content:"";position:absolute;inset:0;background:transparent;pointer-events:none}
     .project-card__title{position:absolute;z-index:1;inset:0;display:flex;align-items:center;justify-content:center;margin:0;padding:16px;color:#fff;font-size:clamp(24px,2.4vw,36px);line-height:1.05;font-weight:500;text-align:center;opacity:0;transform:translateY(5px);transition:opacity .25s ease,transform .25s ease}
-    .project-card:hover:after,.project-card:focus-visible:after{background:rgba(128,128,128,.48)}
-    .project-card:hover img,.project-card:focus-visible img{transform:scale(1.035)}
+    .project-card:hover img,.project-card:focus-visible img{opacity:.7}
     .project-card:hover .project-card__title,.project-card:focus-visible .project-card__title{opacity:1;transform:translateY(0)}
     .about{display:grid;grid-template-columns:minmax(0,710px) minmax(240px,345px);align-items:center;justify-content:space-between;gap:7vw}
     .about .section-title{text-align:left;margin:0 0 24px}
@@ -51,15 +51,14 @@
     .section-actions{display:flex;justify-content:center;gap:18px;margin-top:48px;flex-wrap:wrap}
     footer{min-height:84px;padding:24px max(5.1vw,24px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:23px;background:var(--black)}
     @media(max-width:800px){
-      .site-header--desktop{display:none}
-      .site-header--compact{display:flex;position:absolute;top:0;left:0;right:0;height:auto;min-height:72px;padding:18px 22px;align-items:center;justify-content:space-between;background:transparent}
+      .site-header.site-header--desktop{display:none}
+      .site-header.site-header--compact{display:flex;position:absolute;top:0;left:0;right:0;height:auto;min-height:72px;padding:18px 22px;align-items:center;justify-content:space-between;background:transparent}
       .site-header--compact .brand{font-size:18px}
       .site-header--compact .brand img{width:30px;height:30px}
       .site-header--compact .menu-toggle{font:inherit;font-size:15px;padding:8px 12px}
       .site-header--compact .nav{display:none;position:absolute;top:62px;right:22px;width:auto;min-width:145px;flex-direction:column;align-items:stretch;background:#0f0f0f;padding:10px;gap:8px}
       .site-header--compact .nav.is-open{display:flex}
       .site-header--compact .nav a{justify-content:flex-start}
-      .site-header{height:auto;min-height:72px;padding:14px 18px;align-items:flex-start;flex-direction:column;gap:12px;background:linear-gradient(#0007,transparent)}
       .brand{font-size:18px}.brand img{width:34px;height:34px}
       .nav{width:100%;gap:6px;overflow-x:auto;padding-bottom:3px}
       .nav a{font-size:15px;padding:8px 10px}
@@ -81,7 +80,7 @@
       .clients{padding-top:62px!important}
       footer{font-size:16px;padding:22px;min-height:72px}
     }
-    @media(hover:none){.project-card:after{background:rgba(128,128,128,.28)}.project-card__title{opacity:1;transform:none}}
+    @media(hover:none){.project-card img{opacity:.7}.project-card__title{opacity:1;transform:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-video{visibility:hidden}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
