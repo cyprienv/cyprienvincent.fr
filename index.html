@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plans - Pricing</title>
+  <title>Plans & Tarifs</title>
   <style>
     :root {
       --bg: #0b1020;
       --bg-2: #121a2d;
       --panel: rgba(17, 24, 39, 0.9);
-      --panel-strong: #101827;
       --card: #172033;
-      --border: rgba(255,255,255,0.09);
+      --border: rgba(255,255,255,0.08);
       --text: #edf4ff;
       --muted: #a7b3c7;
       --primary: #6ea8fe;
@@ -23,23 +22,14 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       background:
         radial-gradient(circle at top, rgba(110,168,254,0.14), transparent 30%),
         linear-gradient(180deg, var(--bg) 0%, #0d1325 100%);
       color: var(--text);
       min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     .container {
@@ -50,9 +40,9 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
+      background: rgba(11,16,32,0.55);
       backdrop-filter: blur(12px);
-      background: rgba(11,16,32,0.5);
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
@@ -60,7 +50,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 72px;
+      min-height: 72px;
     }
 
     .brand {
@@ -84,7 +74,6 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 24px;
       color: var(--muted);
       font-size: 0.96rem;
@@ -94,22 +83,20 @@
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: white;
       border: none;
-      padding: 12px 18px;
       border-radius: 12px;
+      padding: 12px 18px;
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 12px 28px rgba(79, 124, 255, 0.4);
     }
 
     .hero {
-      padding: 88px 0 40px;
+      padding: 90px 0 40px;
       text-align: center;
     }
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
       padding: 8px 14px;
       font-size: 12px;
       font-weight: 700;
