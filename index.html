@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyprien Vincent – Photographe, vidéaste et directeur artistique</title>
+  <meta name="description" content="Portfolio de Cyprien Vincent, photographe, vidéaste et directeur artistique.">
+
+  <style>
+    /* ---------- Typographie (dossier /typographie) ---------- */
+    @font-face {
+      font-family: "Subjectivity";
+      src: url("typographie/Subjectivity-Regular.woff2") format("woff2"),
+           url("typographie/Subjectivity-Regular.otf") format("opentype"),
+           url("typographie/Subjectivity-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Subjectivity";
+      src: url("typographie/Subjectivity-Medium.woff2") format("woff2"),
+           url("typographie/Subjectivity-Medium.otf") format("opentype"),
+           url("typographie/Subjectivity-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Subjectivity";
+      src: url("typographie/Subjectivity-Bold.woff2") format("woff2"),
+           url("typographie/Subjectivity-Bold.otf") format("opentype"),
+           url("typographie/Subjectivity-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    /* ---------- Variables (couleurs de la maquette) ---------- */
+    :root {
+      --fond-noir: #0f0f0f;
+      --blanc: #ffffff;
+      --marge: clamp(20px, 8.5vw, 122px);
+      --largeur-max: 1440px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--fond-noir);
+      color: var(--blanc);
+      font-family: "Subjectivity", system-ui, sans-serif;
+      font-size: clamp(17px, 1.6vw, 23px);
+      line-height: 1.25;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, p { margin: 0; }
+
+    h2 {
+      font-weight: 500;
+      font-size: clamp(28px, 2.8vw, 40px);
+      line-height: 1;
+    }
+
+    /* ---------- Boutons ---------- */
+    .bouton {
+      display: inline-block;
+      background: var(--blanc);
+      color: var(--fond-noir);
+      padding: 10px 15px;
+      font-size: clamp(16px, 1.6vw, 23px);
+      line-height: 1.2;
+      transition: background .2s, color .2s;
+    }
+    .bouton:hover,
+    .bouton:focus-visible {
+      background: var(--fond-noir);
+      color: var(--blanc);
+      outline: 1px solid var(--blanc);
+    }
+
+    /* ---------- Header ---------- */
+    .header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 83px;
+      padding: 0 clamp(12px, 1.4vw, 20px);
+      max-width: var(--largeur-max);
+      margin: 0 auto;
+    }
+
+    .marque {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: clamp(16px, 1.6vw, 23px);
+    }
+    .marque img {
+      width: 29px;
+      height: 49px;
+      object-fit: cover;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: clamp(6px, 1.2vw, 16px);
+    }
+    .menu a {
+      background: var(--blanc);
+      color: var(--fond-noir);
+      padding: 10px 15px;
+      font-size: clamp(14px, 1.4vw, 20px);
+      line-height: 1.2;
+      transition: background .2s, color .2s;
+    }
+    .menu a:hover,
+    .menu a:focus-visible,
+    .menu a[aria-current="page"] {
+      background: var(--fond-noir);
+      color: var(--blanc);
+      outline: 1px solid var(--blanc);
+    }
+
+    /* ---------- B1 : hero ---------- */
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: var(--largeur-max);
+      margin: 0 auto;
+      aspect-ratio: 1440 / 839;
+      min-height: 420px;
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero::after {            /* voile pour la lisibilité du texte */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);
+    }
+    .hero-texte {
+      position: absolute;
+      z-index: 2;
+      left: clamp(20px, 5vw, 73px);
+      right: 20px;
+      bottom: clamp(28px, 10vw, 150px);
+    }
+    .hero-texte .metier {
+      font-size: clamp(15px, 1.75vw, 25px);
+      margin-bottom: 6px;
+    }
+    .hero-texte h1 {
+      font-weight: 700;
+      font-size: clamp(38px, 4.9vw, 70px);
+      line-height: 1.05;
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      width: 100%;
+      max-width: var(--largeur-max);
+      margin: 0 auto;
+      padding-left: var(--marge);
+      padding-right: var(--marge);
+    }
+
+    /* B2 : projets récents */
+    .projets { padding-top: clamp(60px, 8.5vw, 83px); }
+    .projets h2 { text-align: center; }
+
+    .cartes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 4vw, 161px);
+      margin-top: clamp(30px, 9.5vw, 137px);
+    }
+    .carte {
+      position: relative;
+      display: block;
+      aspect-ratio: 345 / 442;
+      overflow: hidden;
+    }
+    .carte img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carte span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, .37);
+      font-weight: 500;
+      font-size: clamp(18px, 2.1vw, 30px);
+      text-align: center;
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .carte:hover span,
+    .carte:focus-visible span { opacity: 1; }
+
+    /* B3 : qui suis-je */
+    .apropos {
+      display: grid;
+      grid-template-columns: minmax(0, 710px) 345px;
+      justify-content: space-between;
+      column-gap: 48px;
+      row-gap: 32px;
+      margin-top: clamp(70px, 20vw, 287px);
+    }
+    .apropos h2 { margin-bottom: clamp(24px, 3vw, 46px); }
+    .apropos .texte p + p { margin-top: 1.2em; }
+    .apropos .texte .bouton { margin-top: clamp(24px, 3vw, 40px); }
+    .apropos figure {
+      margin: 0;
+      align-self: end;
+    }
+    .apropos figure img {
+      width: 100%;
+      aspect-ratio: 345 / 484;
+      object-fit: cover;
+    }
+
+    /* B4 : ils m'ont fait confiance */
+    .confiance {
+      margin-top: clamp(70px, 15vw, 173px);
+      text-align: center;
+    }
+    .confiance h2 { font-size: clamp(26px, 2.8vw, 40px); }
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: clamp(10px, 2vw, 48px);
+      margin-top: clamp(30px, 5vw, 70px);
+    }
+    .logos img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: clamp(40px, 6vw, 80px);
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      width: 100%;
+      max-width: var(--largeur-max);
+      margin: clamp(60px, 8vw, 100px) auto 0;
+      min-height: 84px;
+      padding: 20px clamp(20px, 3.3vw, 48px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--fond-noir);
+      font-size: clamp(16px, 1.6vw, 23px);
+    }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ---------- Tablette ---------- */
+    @media (max-width: 900px) {
+      .apropos {
+        grid-template-columns: 1fr;
+      }
+      .apropos figure {
+        max-width: 345px;
+      }
+      .logos { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 640px) {
+      .header {
+        height: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .menu { justify-content: flex-start; }
+      .hero { aspect-ratio: 3 / 4; }
+
+      .cartes {
+        grid-template-columns: 1fr;
+        max-width: 345px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* pas de survol au doigt : le titre reste visible */
+      .carte span {
+        opacity: 1;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 50%);
+      }
+    }
+
+    @media (hover: none) {
+      .carte span {
+        opacity: 1;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="marque" href="index.html">
+      <img src="media/Home/site_pp01.png" alt="">
+      <span>Cyprien Vincent</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projets.html">Projets</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- B1 : hero -->
+    <div class="hero">
+      <img src="media/Home/home_B1.jpg" alt="Portrait de groupe, photographie de Cyprien Vincent">
+      <div class="hero-texte">
+        <p class="metier">Photographe, Vidéaste et directeur artistique</p>
+        <h1>Cyprien Vincent</h1>
+      </div>
+    </div>
+
+    <!-- B2 : projets récents -->
+    <section class="projets" id="projets">
+      <h2>Les projets récents</h2>
+      <div class="cartes">
+        <a class="carte" href="projets.html">
+          <img src="media/Home/home_B2_projets.jpg" alt="">
+          <span>Projets</span>
+        </a>
+        <a class="carte" href="concerts.html">
+          <img src="media/Home/home_B2_concerts.jpg" alt="">
+          <span>Concerts</span>
+        </a>
+        <a class="carte" href="galerie.html">
+          <img src="media/Home/home_B2_galerie.jpg" alt="">
+          <span>Galerie</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- B3 : qui suis-je ? -->
+    <section class="apropos" id="a-propos">
+      <div class="texte">
+        <h2>Qui suis je ?</h2>
+        <p>Bonjour,<br>Designer de formation, j’ai toujours été guidé par le visuel, les couleurs et le sens du détail.</p>
+        <p>Au fil de mon parcours, j’ai développé une approche où l’œil ne se limite pas à observer, mais à diriger. Je conçois et structure des univers visuels.</p>
+        <p>Mon rôle consiste à traduire une vision en narration visuelle, en orchestrant les éléments pour en révéler toute la portée.</p>
+        <p>Photographe et vidéaste, j’interviens aujourd’hui sur la conception artistique, la direction et la production de projets visuels.</p>
+        <a class="bouton" href="contact.html">Me contacter</a>
+      </div>
+      <figure>
+        <img src="media/Home/home_B3_moi.jpg" alt="Portrait de Cyprien Vincent">
+      </figure>
+    </section>
+
+    <!-- B4 : ils m'ont fait confiance -->
+    <section class="confiance" id="references">
+      <h2>Ils m’ont fait confiance</h2>
+      <div class="logos">
+        <img src="media/Home/archiculture.png" alt="Archiculture">
+        <img src="media/Home/collectiflabringue.png" alt="Collectif la Bringue">
+        <img src="media/Home/krumpp.png" alt="Krumpp">
+        <img src="media/Home/furiclub.png" alt="Furiclub">
+        <img src="media/Home/warehouse.png" alt="Warehouse">
+        <img src="media/Home/o-spectacle.png" alt="O Spectacles">
+      </div>
+      <div class="actions">
+        <a class="bouton" href="concerts.html">Voir plus de concerts</a>
+        <a class="bouton" href="contact.html">Me contacter</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Cyprien Vincent 2026</p>
+    <a href="contact.html">Contact</a>
+  </footer>
+
+</body>
+</html>
