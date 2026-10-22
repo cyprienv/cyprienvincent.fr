@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photographe, vidéaste et directeur artistique – Cyprien Vincent</title>
+  <meta name="description" content="Portfolio de Cyprien Vincent, photographe, vidéaste et directeur artistique.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="marque" href="index.html" aria-label="Cyprien Vincent, accueil"><img src="media/Home/headers_pp.jpg" alt=""><span>Cyprien Vincent</span></a>
+    <button class="bouton bouton-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projets.html">Projets</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <div class="hero">
+      <picture>
+        <source media="(max-width: 640px)" srcset="media/Home/home_B1_fond-tel.jpg">
+        <img src="media/Home/home_B1_fond.jpg" alt="" fetchpriority="high">
+      </picture>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="media/Home/home_B1_fond-pc-mov.mp4" type="video/mp4">
+      </video>
+      <video class="hero-video hero-video--mobile" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="media/Home/home_B1_fond-tel-mov.mp4" type="video/mp4">
+      </video>
+      <div class="hero-texte">
+        <p class="sur-titre">Photographe, Vidéaste et directeur artistique</p>
+        <h1>Cyprien Vincent</h1>
+      </div>
+    </div>
+
+    <section class="projets">
+      <h2>Les projets récents</h2>
+      <div class="cartes">
+        <a class="carte" href="projets.html"><img src="media/Home/home_B2_projets.jpg" alt=""><span>Projets</span></a>
+        <a class="carte" href="concerts.html"><img src="media/Home/home_B2_concerts.jpg.jpg" alt=""><span>Concerts</span></a>
+        <a class="carte" href="galerie.html"><img src="media/Galerie-pages/Galerie/galerie_marcus.jpg" alt=""><span>Galerie</span></a>
+      </div>
+    </section>
+
+    <section class="apropos">
+      <div class="texte">
+        <h2>Qui suis je ?</h2>
+        <p>Bonjour,<br>Designer de formation, j’ai toujours été guidé par le visuel, les couleurs et le sens du détail.</p>
+        <p>Au fil de mon parcours, j’ai développé une approche où l’œil ne se limite pas à observer, mais à diriger. Je conçois et structure des univers visuels.</p>
+        <p>Mon rôle consiste à traduire une vision en narration visuelle, en orchestrant les éléments pour en révéler toute la portée.</p>
+        <p>Photographe et vidéaste, j’interviens aujourd’hui sur la conception artistique, la direction et la production de projets visuels.</p>
+        <a class="bouton" href="contact.html">Me contacter</a>
+      </div>
+      <figure><img src="media/Home/home_B3_moi.jpg" alt="Portrait de Cyprien Vincent"></figure>
+    </section>
+
+    <section class="confiance">
+      <h2>Ils m’ont fait confiance</h2>
+      <div class="logos">
+        <img class="l-archiculture" src="media/Home/Logo/archiculture.jpg" alt="Archiculture" loading="lazy">
+        <img class="l-bringue" src="media/Home/Logo/collectiflabringue.jpg" alt="Collectif La Bringue" loading="lazy">
+        <img class="l-krumpp" src="media/Home/Logo/krumpp.jpg" alt="Krumpp" loading="lazy">
+        <img src="media/Home/Logo/Furiclub.jpg" alt="Furiclub" loading="lazy">
+        <img src="media/Home/Logo/warehouse.jpg" alt="Warehouse" loading="lazy">
+        <img src="media/Home/Logo/o%20spectacle.jpg" alt="O Spectacles" loading="lazy">
+      </div>
+      <div class="actions">
+        <a class="bouton" href="concerts.html">Voir plus de concerts</a>
+        <a class="bouton" href="contact.html">Me contacter</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Cyprien Vincent 2026</p>
+    <a class="contact-lien" href="contact.html">Contact</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
