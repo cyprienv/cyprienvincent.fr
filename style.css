@@ -11,7 +11,7 @@
   --blanc: #fff;
   --marge: clamp(20px, 8.5vw, 122px);
   --marge-images: clamp(20px, 7.1vw, 102px);
-  --max: 1440px;
+  --max: 100%; /* Modifié ici pour occuper toute la largeur de l'appareil */
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
