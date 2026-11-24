@@ -20,6 +20,25 @@
   if (openBtn) openBtn.addEventListener("click", function () { setMenu(true); });
   if (closeBtn) closeBtn.addEventListener("click", function () { setMenu(false); });
 
+
+  /* ---------- Curseur point blanc (noir au survol d'un lien) ---------- */
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var dot = document.createElement("div");
+    dot.className = "cursor";
+    document.body.appendChild(dot);
+    document.documentElement.classList.add("has-cursor");
+    var LINKS = "a, button, [data-lightbox], .card, .reel, label, input, select, textarea";
+    document.addEventListener("mousemove", function (e) {
+      dot.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)";
+      dot.classList.add("is-visible");
+      var t = e.target;
+      var onLink = !!(t && t.closest && t.closest(LINKS));
+      var onBtn = !!(t && t.closest && t.closest(".btn"));   /* bouton survolé = fond foncé → point blanc */
+      dot.classList.toggle("is-link", onLink && !onBtn);
+    }, { passive: true });
+    document.documentElement.addEventListener("mouseleave", function () { dot.classList.remove("is-visible"); });
+  }
+
   /* ---------- Vidéo de fond : on ne charge que celle qui est visible ---------- */
   document.querySelectorAll("video[data-autoplay]").forEach(function (v) {
     if (v.offsetParent === null) { v.removeAttribute("autoplay"); v.preload = "none"; return; }
