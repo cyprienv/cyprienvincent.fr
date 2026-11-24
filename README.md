@@ -1,4 +1,4 @@
-# https://cyprienv.github.io/cyprienvincent.fr/
+# cyprienvincent.fr
 
 # Portfolio — Cyprien Vincent
 
