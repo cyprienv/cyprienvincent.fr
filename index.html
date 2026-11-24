@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyprien Vincent — Photographe, vidéaste et directeur artistique</title>
+  <meta name="description" content="Portfolio de Cyprien Vincent, photographe, vidéaste et directeur artistique.">
+  <meta property="og:title" content="Cyprien Vincent — Photographe, vidéaste et directeur artistique">
+  <meta property="og:description" content="Portfolio de Cyprien Vincent, photographe, vidéaste et directeur artistique.">
+  <meta name="theme-color" content="#0f0f0f">
+  <link rel="icon" href="assets/media/home/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a class="nav__brand" href="index.html">
+      <img src="assets/media/home/avatar.jpg" alt="" width="50" height="50">
+      <span>Cyprien Vincent</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav__links">
+        <li><a class="btn is-active" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="btn" href="projets.html">Projets</a></li>
+        <li><a class="btn" href="concerts.html">Concerts</a></li>
+        <li><a class="btn" href="galerie.html">Galerie</a></li>
+        <li><a class="btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__top">
+      <span>Cyprien Vincent</span>
+      <button class="btn menu__close" type="button">Retour</button>
+    </div>
+    <ul class="menu__links">
+      <li><a class="btn" href="index.html">Home</a></li>
+      <li><a class="btn" href="projets.html">Projets</a></li>
+      <li><a class="btn" href="concerts.html">Concerts</a></li>
+      <li><a class="btn" href="galerie.html">Galerie</a></li>
+      <li><a class="btn" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="hero hero--home">
+      <div class="hero__media hero__media--desktop">
+        <video src="assets/media/home/hero.mp4" poster="assets/media/home/hero.jpg" data-autoplay autoplay muted loop playsinline preload="auto"></video>
+      </div>
+      <div class="hero__media hero__media--mobile">
+        <video src="assets/media/home/hero-mobile.mp4" poster="assets/media/home/hero-mobile.jpg" data-autoplay autoplay muted loop playsinline preload="auto"></video>
+      </div>
+      <div class="hero__text">
+        <p class="hero__kicker">Photographe, Vidéaste et directeur artistique</p>
+        <h1 class="hero__title">Cyprien Vincent</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title reveal">Les projets récents</h2>
+      <div class="recent">
+        <a class="card reveal" href="projets.html"><img src="assets/media/home/recent-projets.jpg" alt="Projet éléonore, la petite robe noire" loading="lazy"><span class="card__label">Projets</span></a>
+        <a class="card reveal" href="concerts.html"><img src="assets/media/home/recent-concerts.jpg" alt="DJ sur scène sous lumière rouge" loading="lazy"><span class="card__label">Concerts</span></a>
+        <a class="card reveal" href="galerie.html"><img src="assets/media/home/recent-galerie.jpg" alt="Portrait de Marcus" loading="lazy"><span class="card__label">Galerie</span></a>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__inner">
+        <div>
+          <h2 class="reveal">Qui suis je ?</h2>
+          <div class="about__text reveal">
+            <p>Bonjour,<br>Designer de formation, j’ai toujours été guidé par le visuel, les couleurs et le sens du détail.</p>
+            <p>Au fil de mon parcours, j’ai développé une approche où l’œil ne se limite pas à observer, mais à diriger. Je conçois et structure des univers visuels.</p>
+            <p>Mon rôle consiste à traduire une vision en narration visuelle, en orchestrant les éléments pour en révéler toute la portée.</p>
+            <p>Photographe et vidéaste, j’interviens aujourd’hui sur la conception artistique, la direction et la production de projets visuels.</p>
+          </div>
+        </div>
+        <img class="about__photo reveal" src="assets/media/home/moi.jpg" alt="Portrait de Cyprien Vincent" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title reveal">Ils m’ont fait confiance</h2>
+      <div class="logos reveal">
+        <img src="assets/media/home/logos/archiculture.jpg" alt="Archiculture" loading="lazy">
+        <img src="assets/media/home/logos/la-bringue.jpg" alt="Collectif La Bringue" loading="lazy">
+        <img src="assets/media/home/logos/krumpp.jpg" alt="Krumpp" loading="lazy">
+        <img src="assets/media/home/logos/furiclub.jpg" alt="Furiclub" loading="lazy">
+        <img src="assets/media/home/logos/warehouse.jpg" alt="Warehouse Nantes" loading="lazy">
+        <img src="assets/media/home/logos/o-spectacles.jpg" alt="O Spectacles" loading="lazy">
+      </div>
+      <div class="actions reveal">
+        <a class="btn" href="concerts.html">Voir plus de concerts</a>
+        <a class="btn" href="contact.html">Me contacter</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>Cyprien Vincent 2026</span>
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

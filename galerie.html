@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie — Cyprien Vincent</title>
+  <meta name="description" content="Galerie de shootings photo.">
+  <meta property="og:title" content="Galerie — Cyprien Vincent">
+  <meta property="og:description" content="Galerie de shootings photo.">
+  <meta name="theme-color" content="#0f0f0f">
+  <link rel="icon" href="assets/media/home/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a class="nav__brand" href="index.html">
+      <img src="assets/media/home/avatar.jpg" alt="" width="50" height="50">
+      <span>Cyprien Vincent</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav__links">
+        <li><a class="btn" href="index.html">Home</a></li>
+        <li><a class="btn" href="projets.html">Projets</a></li>
+        <li><a class="btn" href="concerts.html">Concerts</a></li>
+        <li><a class="btn is-active" href="galerie.html" aria-current="page">Galerie</a></li>
+        <li><a class="btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__top">
+      <span>Cyprien Vincent</span>
+      <button class="btn menu__close" type="button">Retour</button>
+    </div>
+    <ul class="menu__links">
+      <li><a class="btn" href="index.html">Home</a></li>
+      <li><a class="btn" href="projets.html">Projets</a></li>
+      <li><a class="btn" href="concerts.html">Concerts</a></li>
+      <li><a class="btn" href="galerie.html">Galerie</a></li>
+      <li><a class="btn" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="hero ">
+      <div class="hero__media"><img src="assets/media/galerie/hero.jpg" alt="" fetchpriority="high"></div>
+      <div class="hero__text">
+        <p class="hero__kicker">Découvrez la</p>
+        <h1 class="hero__title">Galerie</h1>
+      </div>
+    </section>
+
+    <section class="list">
+      <a class="card reveal" href="galerie/marcus.html"><img src="assets/media/galerie/marcus-couverture.jpg" alt="Shooting Marcus" loading="lazy"><span class="card__label">Shooting Marcus</span></a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>Cyprien Vincent 2026</span>
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
