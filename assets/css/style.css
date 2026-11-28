@@ -110,9 +110,6 @@ body.no-scroll { overflow: hidden; }
 .hero__kicker { font-size: clamp(15px, 1.67vw, 24px); margin-bottom: 6px; }
 .hero__title { font-size: clamp(40px, 5vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: .01em; }
 .hero__media--mobile { display: none; }
-/* Grand en-tête : titre placé en haut, comme sur les maquettes (≈ 380px du haut) */
-.hero--tall { align-items: flex-start; }
-.hero--tall .hero__text { padding-top: clamp(140px, 26.4vw, 380px); padding-bottom: 0; }
 
 /* ---------- Sections génériques ---------- */
 .section { padding: clamp(60px, 7vw, 100px) var(--pad); }
@@ -145,7 +142,7 @@ body.no-scroll { overflow: hidden; }
 .actions .btn { font-size: 22px; padding: 10px 14px 9px; }
 
 /* ---------- Listes (Projets / Concerts / Galerie) ---------- */
-.list { display: flex; flex-direction: column; gap: clamp(16px, 3.5vw, 50px); padding: clamp(50px, 9vw, 130px) clamp(20px, 7vw, 102px) clamp(80px, 9vw, 130px); max-width: 1440px; margin: 0 auto; }
+.list { display: flex; flex-direction: column; gap: 28px; padding: clamp(50px, 9vw, 130px) clamp(20px, 7vw, 102px) clamp(80px, 9vw, 130px); max-width: 1440px; margin: 0 auto; }
 .list .card img { aspect-ratio: 1236 / 696; }
 .list .card__label { font-size: clamp(22px, 2.4vw, 36px); font-weight: 500; }
 .list--media img { width: 100%; aspect-ratio: 1236 / 696; object-fit: cover; cursor: zoom-in; }
@@ -208,6 +205,29 @@ body.no-scroll { overflow: hidden; }
 .more-left__inner { position: absolute; z-index: 2; left: clamp(20px, 7.6vw, 110px); bottom: clamp(30px, 7.5vw, 108px); }
 .more-left h2 { font-size: clamp(20px, 2.2vw, 32px); font-weight: 500; margin-bottom: 18px; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
 .ratio-full img { aspect-ratio: 1440 / 936; }
+
+/* =========================================================
+   Pages galerie — reprise exacte des maquettes (base 1440px)
+   Les photos sont déjà recadrées comme dans Figma : on les affiche telles quelles.
+   ========================================================= */
+.hero--g { height: calc(100vw * 1024 / 1440); min-height: 420px; align-items: flex-start; }
+.hero--g-short { height: calc(100vw * 566 / 1440); min-height: 300px; align-items: flex-start; }
+.hero--g .hero__media::after, .hero--g-short .hero__media::after { display: none; }
+.hero--g .hero__text, .hero--g-short .hero__text { padding: calc(100vw * 366 / 1440) 0 0 calc(100vw * 126 / 1440); }
+.hero--g .hero__title { line-height: 1; }
+.g-row { display: grid; grid-template-columns: repeat(var(--cols, 1), 1fr); }
+.g-row img { width: 100%; height: auto; cursor: zoom-in; }
+.g-row--2 { --cols: 2; }
+.g-row--3 { --cols: 3; }
+.g-more { position: relative; }
+.g-more > img { width: 100%; height: auto; }
+.g-more__inner { position: absolute; z-index: 2; left: calc(100vw * 111 / 1440); bottom: calc(100vw * var(--b, 122) / 1440); }
+.g-more h2 { font-size: clamp(20px, 2.2vw, 32px); font-weight: 500; margin-bottom: clamp(12px, 1.7vw, 24px); }
+.g-more .btn { font-size: clamp(15px, 1.53vw, 22px); padding: 10px 12px 9px; }
+.g-more--center .g-more__inner { left: 0; right: 0; bottom: auto; top: 50%; transform: translateY(-50%); text-align: center; }
+.g-more--center .g-more__btns { display: flex; justify-content: center; gap: calc(100vw * 96 / 1440); }
+.list--g { padding: calc(100vw * 79 / 1440) clamp(20px, 7vw, 102px) calc(100vw * 64 / 1440); gap: calc(100vw * 50 / 1440); }
+.list--g .card img { aspect-ratio: auto; height: auto; }
 
 /* ---------- Contact ---------- */
 .contact { text-align: center; padding: clamp(60px, 7vw, 110px) 20px clamp(60px, 7vw, 110px); }
@@ -275,8 +295,6 @@ body.no-scroll { overflow: hidden; }
   .hero__media--desktop { display: none; }
   .hero__media--mobile { display: block; }
   .hero__text, .hero--home .hero__text { padding: 0 20px 60px 30px; }
-  .hero--tall { align-items: flex-end; }
-  .hero--tall .hero__text { padding: 0 20px 60px 30px; }
   .hero--home .hero__kicker { max-width: 13em; }
   .hero--home .hero__title { font-size: 46px; max-width: 6em; }
 
@@ -312,6 +330,12 @@ body.no-scroll { overflow: hidden; }
   .ratio-full img { aspect-ratio: 4 / 5; }
   .contact .actions { flex-direction: column; align-items: center; }
 
+  .hero--g { height: 100svh; max-height: 760px; }
+  .hero--g .hero__media img { object-fit: cover; }
+  .hero--g .hero__text, .hero--g-short .hero__text { padding: 120px 20px 0 30px; }
+  .g-row--2, .g-row--3 { --cols: 1; }
+  .g-more__inner { left: 20px; bottom: 30px; }
+  .g-more--center .g-more__btns { gap: 12px; flex-wrap: wrap; }
   .footer { justify-content: center; padding: 50px 20px 30px; }
   .footer a { display: none; }
 }

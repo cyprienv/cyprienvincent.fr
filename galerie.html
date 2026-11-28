@@ -9,9 +9,7 @@
   <meta property="og:description" content="Galerie de shootings photo.">
   <meta name="theme-color" content="#0f0f0f">
   <link rel="icon" href="assets/media/home/avatar.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/subjectivity-regular.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -50,20 +48,19 @@
   </div>
 
   <main>
-    <section class="hero ">
+    <section class="hero hero--g-short">
       <div class="hero__media"><img src="assets/media/galerie/hero.jpg" alt="" fetchpriority="high"></div>
       <div class="hero__text">
         <p class="hero__kicker">Découvrez la</p>
         <h1 class="hero__title">Galerie</h1>
       </div>
     </section>
-
-    <section class="list">
-      <a class="card reveal" href="galerie/matthis.html"><img src="assets/media/galerie/matthis/matthis-10.jpg" alt="Matthis Go Muscu" loading="lazy"><span class="card__label">Matthis Go Muscu</span></a>
-      <a class="card reveal" href="galerie/marcus.html"><img src="assets/media/galerie/marcus-couverture.jpg" alt="Shooting Marcus" loading="lazy"><span class="card__label">Shooting Marcus</span></a>
-      <a class="card reveal" href="galerie/klervie.html"><img style="object-position: 50% 45%" src="assets/media/galerie/klervie/klervie01-5.jpg" alt="Klervie" loading="lazy"><span class="card__label">Klervie</span></a>
-      <a class="card reveal" href="galerie/daniella.html"><img src="assets/media/galerie/daniella/dani-01-4.jpg" alt="Daniella" loading="lazy"><span class="card__label">Daniella</span></a>
-      <a class="card reveal" href="galerie/adam.html"><img src="assets/media/galerie/adam/adam-17.jpg" alt="Adam évolution" loading="lazy"><span class="card__label">Adam évolution</span></a>
+    <section class="list list--g">
+      <a class="card reveal" href="galerie/matthis.html"><img src="assets/media/galerie/cartes/matthis.jpg" alt="Matthis Go Muscu" loading="lazy"><span class="card__label">Matthis Go Muscu</span></a>
+      <a class="card reveal" href="galerie/marcus.html"><img src="assets/media/galerie/cartes/marcus.jpg" alt="Shooting Marcus" loading="lazy"><span class="card__label">Shooting Marcus</span></a>
+      <a class="card reveal" href="galerie/klervie.html"><img src="assets/media/galerie/cartes/klervie.jpg" alt="Klervie" loading="lazy"><span class="card__label">Klervie</span></a>
+      <a class="card reveal" href="galerie/daniella.html"><img src="assets/media/galerie/cartes/daniella.jpg" alt="Daniella" loading="lazy"><span class="card__label">Daniella</span></a>
+      <a class="card reveal" href="galerie/adam.html"><img src="assets/media/galerie/cartes/adam.jpg" alt="Adam évolution" loading="lazy"><span class="card__label">Adam évolution</span></a>
     </section>
 
   </main>
