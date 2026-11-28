@@ -155,6 +155,10 @@ body.no-scroll { overflow: hidden; }
 .ratio-sq img    { aspect-ratio: 480 / 593; }
 .ratio-tall img  { aspect-ratio: 720 / 917; }
 .grid--2 { --cols: 2; }
+/* Rangée 2 photos de largeurs différentes (page Néo) */
+.grid--duo { grid-template-columns: 901fr 539fr; aspect-ratio: 1440 / 701; }
+.grid--duo img { aspect-ratio: auto; }
+.ratio-pano img  { aspect-ratio: 1440 / 654; }
 .grid--3 { --cols: 3; }
 
 /* Bloc texte/vidéo + image */
@@ -282,6 +286,8 @@ body.no-scroll { overflow: hidden; }
 
   .grid--3 { --cols: 1; }
   .grid--2 { --cols: 1; }
+  .grid--duo { grid-template-columns: 1fr; aspect-ratio: auto; }
+  .grid--duo img { aspect-ratio: 4 / 5; }
   .ratio-sq img, .ratio-tall img { aspect-ratio: 4 / 5; }
   .ratio-wide img { aspect-ratio: 4 / 3; }
   .split, .split--wide { grid-template-columns: 1fr; min-height: 0; }
