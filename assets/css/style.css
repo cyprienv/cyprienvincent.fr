@@ -110,6 +110,9 @@ body.no-scroll { overflow: hidden; }
 .hero__kicker { font-size: clamp(15px, 1.67vw, 24px); margin-bottom: 6px; }
 .hero__title { font-size: clamp(40px, 5vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: .01em; }
 .hero__media--mobile { display: none; }
+/* Grand en-tête : titre placé en haut, comme sur les maquettes (≈ 380px du haut) */
+.hero--tall { align-items: flex-start; }
+.hero--tall .hero__text { padding-top: clamp(140px, 26.4vw, 380px); padding-bottom: 0; }
 
 /* ---------- Sections génériques ---------- */
 .section { padding: clamp(60px, 7vw, 100px) var(--pad); }
@@ -142,7 +145,7 @@ body.no-scroll { overflow: hidden; }
 .actions .btn { font-size: 22px; padding: 10px 14px 9px; }
 
 /* ---------- Listes (Projets / Concerts / Galerie) ---------- */
-.list { display: flex; flex-direction: column; gap: 28px; padding: clamp(50px, 9vw, 130px) clamp(20px, 7vw, 102px) clamp(80px, 9vw, 130px); max-width: 1440px; margin: 0 auto; }
+.list { display: flex; flex-direction: column; gap: clamp(16px, 3.5vw, 50px); padding: clamp(50px, 9vw, 130px) clamp(20px, 7vw, 102px) clamp(80px, 9vw, 130px); max-width: 1440px; margin: 0 auto; }
 .list .card img { aspect-ratio: 1236 / 696; }
 .list .card__label { font-size: clamp(22px, 2.4vw, 36px); font-weight: 500; }
 .list--media img { width: 100%; aspect-ratio: 1236 / 696; object-fit: cover; cursor: zoom-in; }
@@ -272,6 +275,8 @@ body.no-scroll { overflow: hidden; }
   .hero__media--desktop { display: none; }
   .hero__media--mobile { display: block; }
   .hero__text, .hero--home .hero__text { padding: 0 20px 60px 30px; }
+  .hero--tall { align-items: flex-end; }
+  .hero--tall .hero__text { padding: 0 20px 60px 30px; }
   .hero--home .hero__kicker { max-width: 13em; }
   .hero--home .hero__title { font-size: 46px; max-width: 6em; }
 
