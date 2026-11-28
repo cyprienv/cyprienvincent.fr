@@ -198,6 +198,14 @@ body.no-scroll { overflow: hidden; }
 .more h2 { font-size: clamp(20px, 2.2vw, 32px); font-weight: 500; margin-bottom: 26px; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
 .more .actions { margin-top: 0; gap: 14px 40px; }
 
+/* Bandeau "Voir plus" posé sur les dernières photos, texte en bas à gauche (galerie) */
+.more-left { position: relative; }
+.more-left .grid img { cursor: zoom-in; }
+.more-left::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 40%); }
+.more-left__inner { position: absolute; z-index: 2; left: clamp(20px, 7.6vw, 110px); bottom: clamp(30px, 7.5vw, 108px); }
+.more-left h2 { font-size: clamp(20px, 2.2vw, 32px); font-weight: 500; margin-bottom: 18px; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
+.ratio-full img { aspect-ratio: 1440 / 936; }
+
 /* ---------- Contact ---------- */
 .contact { text-align: center; padding: clamp(60px, 7vw, 110px) 20px clamp(60px, 7vw, 110px); }
 .contact p { font-size: clamp(18px, 1.67vw, 24px); line-height: 1.15; }
@@ -296,6 +304,7 @@ body.no-scroll { overflow: hidden; }
   .embed--yt { padding: 50px 16px; }
 
   .more .actions { gap: 12px; }
+  .ratio-full img { aspect-ratio: 4 / 5; }
   .contact .actions { flex-direction: column; align-items: center; }
 
   .footer { justify-content: center; padding: 50px 20px 30px; }
